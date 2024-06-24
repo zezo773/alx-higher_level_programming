@@ -9,4 +9,3 @@ def uniq_add(my_list=[]):
     my_set = set(my_list)
     sums = sum(my_set)
     return sums
-
