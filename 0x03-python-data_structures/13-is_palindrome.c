@@ -1,72 +1,69 @@
 #include "lists.h"
-
 /**
- * reverse_listint - reverses a linked list
- * @head: pointer to the first node in the list
+ * reverse - Reverses a singly linked list
+ * @head: Pointer to the first node of the list
  *
- * Return: pointer to the first node in the new list
+ * Return: Pointer to the new head (reversed list)
  */
-void reverse_listint(listint_t **head)
+listint_t *reverse(listint_t *head)
 {
-	listint_t *prev = NULL;
-	listint_t *current = *head;
+	listint_t *prv = NULL;
+	listint_t *cur = head;
 	listint_t *next = NULL;
 
-	while (current)
+	while(cur)
 	{
-		next = current->next;
-		current->next = prev;
-		prev = current;
-		current = next;
+		next = cur->next;
+		cur->next = prv;
+		prv = cur;
+		cur = next;
 	}
-
-	*head = prev;
+	return (prv);
 }
-
 /**
- * is_palindrome - checks if a linked list is a palindrome
- * @head: double pointer to the linked list
+ * isEqual - Compares two singly linked lists
+ * @n1: Pointer to the first node of the first list
+ * @n2: Pointer to the first node of the second list
  *
- * Return: 1 if it is, 0 if not
+ * Return: 1 if both lists are equal, 0 otherwise
+ */
+int isEqual(listint_t *n1, listint_t *n2)
+{
+	while(n1 && n2)
+	{
+		if (n1->n != n2->n)
+			return (0);
+		n1 = n1->next;
+		n2 = n2->next;
+	}
+	return (1);
+}
+/**
+ * is_palindrome - Checks if a singly linked list is a palindrome
+ * @head: Double pointer to the head of the list
+ *
+ * Return: 1 if the list is a palindrome, 0 otherwise
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
-
-	if (*head == NULL || (*head)->next == NULL)
+	if (!*head || !(*head)->next)
 		return (1);
 
-	while (1)
+	listint_t *fast = *head, *slow = *head;
+	while (fast->next && fast->next->next)
 	{
-		fast = fast->next->next;
-		if (!fast)
-		{
-			dup = slow->next;
-			break;
-		}
-		if (!fast->next)
-		{
-			dup = slow->next->next;
-			break;
-		}
 		slow = slow->next;
+		fast = fast->next->next;
 	}
 
-	reverse_listint(&dup);
+	listint_t *head2;
+	head2 = reverse(slow->next);
+	slow->next = NULL;
 
-	while (dup && temp)
-	{
-		if (temp->n == dup->n)
-		{
-			dup = dup->next;
-			temp = temp->next;
-		}
-		else
-			return (0);
-	}
+	int ret = isEqual(*head, head2);
 
-	if (!dup)
-		return (1);
+	head2 = reverse(head2);
+	slow->next = head2;
 
-	return (0);
+	return ret;
 }
