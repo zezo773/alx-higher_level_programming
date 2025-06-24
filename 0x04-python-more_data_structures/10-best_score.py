@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-
-
 def best_score(a_dictionary):
-    """
-    A function that returns a key with the biggest integer value.
-    """
-    if a_dictionary:
-        my_list = list(a_dictionary.keys())
-        score = 0
-        leader = ""
-        for i in my_list:
-            if a_dictionary[i] > score:
-                score = a_dictionary[i]
-                leader = i
-        return leader
+    if not a_dictionary:
+        return None
+
+    best_key = None
+    max_num = 0
+
+    for key, value in a_dictionary.items():
+        if value > max_num:
+            max_num = value
+            best_key = key
+
+    return best_key
