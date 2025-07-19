@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-This module provides a function that adds two integers.
+This module provides a single function, `add_integer`.
+
+It safely adds two integers or floats by casting floats to integers
 """
 
 
