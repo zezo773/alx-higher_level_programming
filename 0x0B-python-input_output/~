@@ -1,0 +1,10 @@
+from math import factorial
+
+rows = 5
+
+for n in range(rows):
+    for r in range(n+1):
+        curren = []
+        ncr = factorial(n) // (factorial(r) * factorial(n - r))
+        curren.append(ncr)
+    print(curren)
