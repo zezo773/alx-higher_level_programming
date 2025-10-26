@@ -1,0 +1,32 @@
+# SQL - More queries
+Project done during **Full Stack Software Engineering studies** at **Holberton School**. It aims to learn about how to create a new user, manage privileges for a user, `PRIMARY KEY`, `FOREIGN KEY`, constraints, subqueries, `JOIN` and `UNION` with **MySQL**.
+
+![SQL - More queries](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/3/bc2575fee3303b731031.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20251026%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251026T070455Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=9c55dd136e315b8f2e7ef959461e6acdd834256e692556384c7dec4eb37a7469)
+
+## Technologies
+* `MySQL 5.7` (version 5.7.8-rc)
+* Tested on Ubuntu 14.04 LTS
+
+## Files
+
+All the following files are scripts of MySQL:
+
+| Filename | Description |
+| -------- | ----------- |
+| `0-privileges.sql` | Lists all privileges of the MySQL users `user_0d_1` and `user_0d_2` on your server. |
+| `1-create_user.sql` | Creates the MySQL server user `user_0d_1` |
+| `2-create_read_user.sql` | Creates the database `hbtn_0d_2` and the user `user_0d_2` |
+| `3-force_name.sql` | Creates the table `force_name` on your MySQL server |
+| `4-never_empty.sql` | Creates the table `id_not_null` on your MySQL serve |
+| `5-unique_id.sql` | Creates the table `unique_id` on your MySQL server |
+| `6-states.sql` | Creates the database `hbtn_0d_usa` and the table `states` (in the database `hbtn_0d_usa`) |
+| `7-cities.sql` | Creates the database `hbtn_0d_usa` and the table `cities` (in the database `hbtn_0d_usa`) |
+| `8-cities_of_california_subquery.sql` | Lists all the cities of California that can be found in the database `hbtn_0d_usa` |
+| `9-cities_by_state_join.sql` | Lists all cities contained in the database `hbtn_0d_usa` |
+| `10-genre_id_by_show.sql` | Lists all shows contained in `hbtn_0d_tvshows` that have at least one genre linked |
+| `11-genre_id_all_shows.sql` | Lists all shows contained in the database `hbtn_0d_tvshows` |
+| `12-no_genre.sql` | Lists all shows contained in `hbtn_0d_tvshows` without a genre linked |
+| `13-count_shows_by_genre.sql` | Lists all genres from `hbtn_0d_tvshows` and displays the number of shows linked to each |
+| `14-my_genres.sql` | Uses the `hbtn_0d_tvshows` database to lists all genres of the show `Dexter` |
+| `15-comedy_only.sql` | Lists all Comedy shows in the database `hbtn_0d_tvshows` |
+| `16-shows_by_genre.sql` | Lists all shows, and all genres linked to that show, from the database `hbtn_0d_tvshows` |
